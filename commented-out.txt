@@ -1,0 +1,82 @@
+// const { graphqlHTTP } = require('express-graphql');
+// const { buildSchema } = require('graphql');
+
+// const schema = buildSchema(`
+//   input MessageInput {
+//     content: String
+//     author: String
+//   }
+
+//   type Message {
+//     id: ID!
+//     content: Striing
+//     author: String
+//   }
+
+//   type RandomDie {
+//     numSides: Int!
+//     rollOnce: Int!
+//     roll(numRolls: Int!): [Int]
+//   }
+
+//   type Query {
+//     getDie(numSides: Int): RandomDie
+//     getMessage(id: ID!): Message
+//   }
+
+//   type Mutation {
+//     createMessage(input: MessageInput): Message
+//     updateMessage(id: ID!, input: MessageInput): Message
+//   }
+// `);
+
+// const root = {
+//   getDie: ({numSides}) => {
+//     return new RandomDie(numSides || 6);
+//   },
+//   getMessage: ({id}) => {
+//     if (!fakeDatabase[id]) {
+//       throw new Error('no message exists with id ' + id);
+//     }
+//     return new Message(id, fakeDatabase[id]);
+//   },
+//   createMessage: ({input}) => {
+//     const id = require('crypto').randomBytes(10).toString('hex');
+
+//     fakeDatabase[id] = input;
+//     return new Message(id, input);
+//   },
+//   updateMessage: ({id, input}) => {
+//     if (!fakeDatabase[id]) {
+//       throw new Error('no message exists with id ' + id);
+//     }
+//     fakeDatabase[id] = input;
+//     return new Message(id, input);
+//   },
+// };
+
+/* 
+app.get('/', (req, res) => {
+  res
+    .status(201)
+    .send('Hello, Express!');
+})
+
+app.get('/next', (req, res) => {
+  res.send('This is the next path!')
+})
+
+app.get('/echo', (req, res, next) => {
+  const responseText = `Here are some details of your request:
+    Base URL: ${req.baseUrl}
+    Host: ${req.hostname}
+    Path: ${req.path}
+    Body: ${req.body}
+  `;
+  res.send(responseText);
+})
+
+app.get('/queryViewer', (req, res) => {
+  res.send(req.query)
+})
+*/
